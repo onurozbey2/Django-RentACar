@@ -26,5 +26,8 @@ class Cars(models.Model):
 
 class Images(models.Model):
     cars = models.ForeignKey(Cars, on_delete=models.CASCADE)
-    title = models.CharField(max_length=50)
+    title = models.CharField(blank=True, max_length=50)
     resim = models.ImageField(blank=True, upload_to='images/')
+
+    def __str__(self):
+        return self.title
