@@ -21,4 +21,10 @@ class Cars(models.Model):
     # update_at = models.DateTimeField('date published')
 
     def __str__(self):
-        return self.brand
+        return self.marka
+
+
+class Images(models.Model):
+    cars = models.ForeignKey(Cars, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    resim = models.ImageField(blank=True, upload_to='images/')
