@@ -10,13 +10,15 @@ class CarsImageInLine(admin.TabularInline):
 
 
 class CarsAdmin(admin.ModelAdmin):
-    list_display = ['marka', 'model', 'durum']
+    list_display = ['marka', 'model', 'fiyat', 'model_yılı', 'motor_hacmi', 'vites', 'image_tag', 'durum']
     list_filter = ['durum']
     inlines = [CarsImageInLine]
+    readonly_fields = ['image_tag']
 
 
 class ImagesAdmin(admin.ModelAdmin):
-    list_display = ['title', 'cars', 'resim']
+    list_display = ['title', 'cars', 'image_tag']
+    readonly_fields = ['image_tag']
 
 
 admin.site.register(Cars, CarsAdmin)

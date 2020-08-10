@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 
 
 class Cars(models.Model):
@@ -23,6 +24,10 @@ class Cars(models.Model):
     def __str__(self):
         return self.marka
 
+    def image_tag(self):
+        return mark_safe('<img src="{}" height="50"/>'.format(self.resim.url))
+    image_tag.short_description = 'Resim'
+
 
 class Images(models.Model):
     cars = models.ForeignKey(Cars, on_delete=models.CASCADE)
@@ -31,3 +36,7 @@ class Images(models.Model):
 
     def __str__(self):
         return self.title
+
+    def image_tag(self):
+        return mark_safe('<img src="{}" height="50"/>'.format(self.resim.url))
+    image_tag.short_description = 'Resim'
