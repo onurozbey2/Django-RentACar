@@ -1,8 +1,9 @@
 {% extends "homepage.html" %}
 
-{% block title %} Index e-ticaret {% endblock %}
-{% block keywords %} Index keywords {% endblock %}
-{% block description %} Index description {% endblock %}
+{% block title %} {{setting.title}} {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+{% block head %} <link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
 
 {% block menu_section %}
   {% include "menu_section.html" %}
