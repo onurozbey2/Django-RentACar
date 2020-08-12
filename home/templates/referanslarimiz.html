@@ -3,16 +3,20 @@
 {% block title %} {{setting.title}}-Referanslarımız {% endblock %}
 {% block keywords %} {{setting.keywords}} {% endblock %}
 {% block description %} {{setting.description}} {% endblock %}
-{% block head %} <link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
+{% block head %}<link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
+
+{% block header %}
+{% include "header.html" %}
+{% endblock %}
 
 {% block menu_section %}
-  {% include "menu_section.html" %}
+{% include "menu_section.html" %}
 {% endblock %}
 
 {% block slider %}
-  {% include "slider.html" %}
+{% include "slider.html" %}
 {% endblock %}
 
 {% block client_brands %}
-  {% include "client_brands.html" %}
+{% include "client_brands.html" %}
 {% endblock %}

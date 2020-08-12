@@ -3,16 +3,16 @@
 {% block title %} {{setting.title}}-Hakkımızda {% endblock %}
 {% block keywords %} {{setting.keywords}} {% endblock %}
 {% block description %} {{setting.description}} {% endblock %}
-{% block head %} <link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
+{% block head %}<link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
 
 {% block menu_section %}
-  {% include "menu_section.html" %}
+{% include "menu_section.html" %}
 {% endblock %}
 
 {% block slider %}
-  {% include "slider.html" %}
+{% include "slider.html" %}
 {% endblock %}
 
 {% block about %}
-  {% include "about.html" %}
+{% include "about.html" %}
 {% endblock %}
