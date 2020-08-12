@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.safestring import mark_safe
+from django.db.models import TextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Cars(models.Model):
@@ -17,9 +19,9 @@ class Cars(models.Model):
     yakıt = models.CharField(max_length=200)
     kasa_tipi = models.CharField(max_length=200)
     resim = models.ImageField(blank=True, upload_to='images/')
+    detay = RichTextUploadingField(blank=True)
     durum = models.CharField(max_length=20, choices=STATUS)
     ilan_tarihi = models.DateTimeField('date published')
-    # update_at = models.DateTimeField('date published')
 
     def __str__(self):
         return self.marka

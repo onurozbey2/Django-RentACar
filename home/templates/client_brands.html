@@ -6,7 +6,8 @@
         <div class="col-md-12">
           <div class="aa-client-brand-area">
             <ul class="aa-client-brand-slider">
-              <li>
+              {{ setting.references|safe }}
+              <!-- <li>
                 <div class="aa-client-single-brand">
                   <img src="{% static "img/client-brand-1.png" %}" alt="brand image">
                 </div>
@@ -55,7 +56,7 @@
                 <div class="aa-client-single-brand">
                   <img src="{% static "img/client-brand-4.png" %}" alt="brand image">
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

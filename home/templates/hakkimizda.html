@@ -1,6 +1,6 @@
 {% extends "homepage.html" %}
 
-{% block title %} {{setting.title}} {% endblock %}
+{% block title %} {{setting.title}}-Hakkımızda {% endblock %}
 {% block keywords %} {{setting.keywords}} {% endblock %}
 {% block description %} {{setting.description}} {% endblock %}
 {% block head %} <link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
@@ -13,14 +13,6 @@
   {% include "slider.html" %}
 {% endblock %}
 
-{% block last_rentals %}
-  {% include "last_rentals.html" %}
-{% endblock %}
-
-{% block client_says %}
-  {% include "client_says.html" %}
-{% endblock %}
-
-{% block client_brands %}
-  {% include "client_brands.html" %}
+{% block about %}
+  {% include "about.html" %}
 {% endblock %}
