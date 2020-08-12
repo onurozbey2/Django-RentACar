@@ -20,6 +20,7 @@ class Cars(models.Model):
     kasa_tipi = models.CharField(max_length=200)
     resim = models.ImageField(blank=True, upload_to='images/')
     detay = RichTextUploadingField(blank=True)
+    slug = models.SlugField(blank=True, max_length=200)
     durum = models.CharField(max_length=20, choices=STATUS)
     ilan_tarihi = models.DateTimeField('date published')
 
