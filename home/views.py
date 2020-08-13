@@ -47,3 +47,9 @@ def iletisim(request):
     form = ContactForm()
     context = {'setting': setting, 'page': 'iletisim'}
     return render(request, 'iletisim.html', context)
+
+
+def araclar(request):
+    cars = Cars.objects.all()
+    context = {'cars': cars}
+    return render(request, 'araclar.html', context)

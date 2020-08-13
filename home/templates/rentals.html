@@ -1,0 +1,92 @@
+{% load static %}
+<!-- Start Property header  -->
+<section id="aa-property-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-property-header-inner">
+          <h2>ARAÇLAR</h2>
+          <ol class="breadcrumb">
+            <li><a href="/">ANA SAYFA</a></li>
+            <li class="active">Araçlar</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Property header  -->
+<!-- Start Properties  -->
+<section id="aa-properties">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-properties-content">
+          <!-- start properties content head -->
+            <div class="aa-properties-content-head">
+              <div class="aa-properties-content-head-left">
+                <form action="" class="aa-sort-form">
+                  <label for="">Şuna göre sırala</label>
+                  <select name="">
+                    <option value="1" selected="Default">Default</option>
+                    <option value="2">Marka</option>
+                    <option value="3">Model</option>
+                    <option value="4">Fiyat</option>
+                  </select>
+                </form>
+                <form action="" class="aa-show-form">
+                  <label for="">Göster</label>
+                  <select name="">
+                    <option value="1" selected="12">6</option>
+                    <option value="2">12</option>
+                    <option value="3">24</option>
+                  </select>
+                </form>
+              </div>
+              <div class="aa-properties-content-head-right">
+                <a id="aa-grid-properties" href="#"><span class="fa fa-th"></span></a>
+                <a id="aa-list-properties" href="#"><span class="fa fa-list"></span></a>
+              </div>
+            </div>
+          <!-- Start properties content body -->
+          {% for rs in cars %}
+          <div class="aa-properties-content-body">
+            <ul class="aa-properties-nav">
+              <li>
+                <article class="aa-properties-item">
+                  <a class="aa-properties-item-img" href="#">
+                    <img alt="img" src="{{ rs.resim.url }}">
+                  </a>
+                  <div class="aa-tag for-rent">
+                    Kiralık
+                  </div>
+                  <div class="aa-properties-item-content">
+                    <div class="aa-properties-info">
+                      <span>{{ rs.model_yılı }}</span>
+                      <span>{{ rs.yakıt }}</span>
+                      <span>{{ rs.vites }}</span>
+                      <span>{{ rs.kasa_tipi }}</span>
+                    </div>
+                    <div class="aa-properties-about">
+                      <h3><a href="#">{{ rs.marka }} {{ rs.model }}</a></h3>
+                      <p>{{ rs.detay|safe }}</p>
+                    </div>
+                    <div class="aa-properties-detial">
+                      <span class="aa-price">
+                        {{ rs.fiyat }}
+                      </span>
+                      <a class="aa-secondary-btn" href="#">Detayları Görüntüle</a>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+          {% endfor %}
+          <!-- End properties content body -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Properties  -->

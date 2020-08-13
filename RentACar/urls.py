@@ -25,6 +25,7 @@ urlpatterns = [
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('referanslarimiz/', views.referanslarimiz, name='referanslarimiz'),
     path('iletisim/', views.iletisim, name='iletisim'),
+    path('araclar/', views.araclar, name='araclar'),
     path('home/', include('home.urls')),
     path('cars/', include('cars.urls')),
     path('admin/', admin.site.urls),
@@ -32,4 +33,5 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

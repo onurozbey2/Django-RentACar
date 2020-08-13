@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-from django.db.models import TextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
