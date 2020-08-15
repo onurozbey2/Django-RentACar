@@ -1,53 +1,36 @@
 {% load static %}
-<!-- Start Property header  -->
-<section id="aa-property-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="aa-property-header-inner">
-          <h2>ARAÇLAR</h2>
-          <ol class="breadcrumb">
-            <li><a href="/">ANA SAYFA</a></li>
-            <li class="active">Araçlar</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Property header  -->
 <!-- Start Properties  -->
 <section id="aa-properties">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-8">
         <div class="aa-properties-content">
           <!-- start properties content head -->
-            <div class="aa-properties-content-head">
-              <div class="aa-properties-content-head-left">
-                <form action="" class="aa-sort-form">
-                  <label for="">Şuna göre sırala</label>
-                  <select name="">
-                    <option value="1" selected="Default">Default</option>
-                    <option value="2">Marka</option>
-                    <option value="3">Model</option>
-                    <option value="4">Fiyat</option>
-                  </select>
-                </form>
-                <form action="" class="aa-show-form">
-                  <label for="">Göster</label>
-                  <select name="">
-                    <option value="1" selected="12">6</option>
-                    <option value="2">12</option>
-                    <option value="3">24</option>
-                  </select>
-                </form>
-              </div>
-              <div class="aa-properties-content-head-right">
-                <a id="aa-grid-properties" href="#"><span class="fa fa-th"></span></a>
-                <a id="aa-list-properties" href="#"><span class="fa fa-list"></span></a>
-              </div>
+          <div class="aa-properties-content-head">
+            <div class="aa-properties-content-head-left">
+              <form action="" class="aa-sort-form">
+                <label for="">Sırala</label>
+                <select name="">
+                  <option value="1" selected="Default">Default</option>
+                  <option value="2">Marka</option>
+                  <option value="3">Model</option>
+                  <option value="4">Fiyat</option>
+                </select>
+              </form>
+              <form action="" class="aa-show-form">
+                <label for="">Göster</label>
+                <select name="">
+                  <option value="1" selected="12">6</option>
+                  <option value="2">12</option>
+                  <option value="3">24</option>
+                </select>
+              </form>
             </div>
+            <div class="aa-properties-content-head-right">
+              <a id="aa-grid-properties" href="#"><span class="fa fa-th"></span></a>
+              <a id="aa-list-properties" href="#"><span class="fa fa-list"></span></a>
+            </div>
+          </div>
           <!-- Start properties content body -->
           {% for rs in cars %}
           <div class="aa-properties-content-body">
@@ -84,7 +67,102 @@
           </div>
           {% endfor %}
           <!-- End properties content body -->
+          <!-- Start properties content bottom -->
         </div>
+      </div>
+      <!-- Start properties sidebar -->
+      <div class="col-md-4">
+        <aside class="aa-properties-sidebar">
+          <!-- Start Single properties sidebar -->
+          <div class="aa-properties-single-sidebar">
+            <h3>Araç Arama</h3>
+            <form action="">
+              <div class="aa-single-advance-search">
+                <input type="text" placeholder="Anahtar Kelime Girin">
+              </div>
+              <div class="aa-single-advance-search">
+                <select id="" name="">
+                  <option selected="" value="0">Kasa</option>
+                  <option value="1">Sedan</option>
+                  <option value="2">Hatchback</option>
+                  <option value="3">Panel Van</option>
+                  <option value="4">Pickup</option>
+                </select>
+              </div>
+              <div class="aa-single-advance-search">
+                <select id="" name="">
+                  <option selected="" value="0">Motor Hacmi</option>
+                  <option value="1">1301-1500</option>
+                  <option value="2">1401-1600</option>
+                  <option value="3">1601-1800</option>
+                  <option value="4">1801-2000</option>
+                </select>
+              </div>
+              <div class="aa-single-advance-search">
+                <select id="" name="">
+                  <option selected="" value="0">Vites</option>
+                  <option value="1">Otomatik</option>
+                  <option value="2">Manuel</option>
+                </select>
+              </div>
+              <div class="aa-single-advance-search">
+                <select id="" name="">
+                  <option selected="" value="0">Yakıt</option>
+                  <option value="1">Benzin</option>
+                  <option value="2">Dizel</option>
+                </select>
+              </div>
+              <!-- <div class="aa-single-filter-search">
+                  <span>Fiyat aralığı (TL)</span>
+                  <span></span>
+                  <span id="skip-value-lower2" class="example-val">300</span>
+                  <span>-</span>
+                  <span id="skip-value-upper2" class="example-val">1500</span>
+                  <div id="aa-price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
+                  </div>
+                </div> -->
+              <div class="aa-single-advance-search">
+                <input type="submit" value="Search" class="aa-search-btn">
+              </div>
+            </form>
+          </div>
+          <!-- Start properties content body -->
+          <!-- {% for rs in sliderdata %}
+          <div class="aa-properties-content-body">
+            <ul class="aa-properties-nav">
+              <li>
+                <article class="aa-properties-item">
+                  <a class="aa-properties-item-img" href="#">
+                    <img alt="img" src="{{ rs.resim.url }}">
+                  </a>
+                  <div class="aa-tag for-rent">
+                    Kiralık
+                  </div>
+                  <div class="aa-properties-item-content">
+                    <div class="aa-properties-info">
+                      <span>{{ rs.model_yılı }}</span>
+                      <span>{{ rs.yakıt }}</span>
+                      <span>{{ rs.vites }}</span>
+                      <span>{{ rs.kasa_tipi }}</span>
+                    </div>
+                    <div class="aa-properties-about">
+                      <h3><a href="#">{{ rs.marka }} {{ rs.model }}</a></h3>
+                      <p>{{ rs.detay|safe }}</p>
+                    </div>
+                    <div class="aa-properties-detial">
+                      <span class="aa-price">
+                        {{ rs.fiyat }}
+                      </span>
+                      <a class="aa-secondary-btn" href="#">Detayları Görüntüle</a>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+          {% endfor %} -->
+          <!-- End properties content body -->
+        </aside>
       </div>
     </div>
   </div>

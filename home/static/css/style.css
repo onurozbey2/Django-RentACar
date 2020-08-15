@@ -1187,13 +1187,11 @@ img {
 #aa-client-brand {
   background-color: #f8f8f8;
   display: inline;
-  float: left;
   padding: 50px 0;
   width: 100%;
 }
 #aa-client-brand .aa-client-brand-area {
   display: inline;
-  float: left;
   width: 100%;
 }
 #aa-client-brand .aa-client-brand-area .aa-client-brand-slider {

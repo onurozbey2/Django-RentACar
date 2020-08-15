@@ -10,9 +10,11 @@ from cars.models import Cars
 def index(request):
     setting = Setting.objects.get(pk=1)
     sliderdata = Cars.objects.all()[:5]
+    homelastrentals = Cars.objects.all().order_by('?')[:6]
     context = {'setting': setting,
                'page': 'home',
-               'sliderdata': sliderdata}
+               'sliderdata': sliderdata,
+               'homelastrentals': homelastrentals}
     return render(request, 'index.html', context)
 
 
@@ -50,6 +52,7 @@ def iletisim(request):
 
 
 def araclar(request):
+    setting = Setting.objects.get(pk=1)
     cars = Cars.objects.all()
-    context = {'cars': cars}
+    context = {'setting': setting, 'cars': cars}
     return render(request, 'araclar.html', context)
