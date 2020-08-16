@@ -1,0 +1,167 @@
+{% load static %}
+<!-- Start Properties  -->
+<section id="aa-properties">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-properties-content">
+          <!-- Start properties content body -->
+          <div class="aa-properties-details">
+            <div class="aa-properties-details-img">
+              <img src="{{ cardetail.resim.url }}" alt="img">
+              <img src="{{ images.resim.url }}" alt="img">
+            </div>
+            <div class="aa-properties-info">
+              <h2>{{cardetail.marka}} {{cardetail.model}}</h2>
+              <span class="aa-price">{{cardetail.fiyat}}</span>
+              <br>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptatibus veniam non voluptate, ipsa eius magni aliquid ratione sit, odio reprehenderit in quis repudiandae dolor.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur, veritatis, ducimus in aliquam magnam voluptatibus ullam libero fugiat temporibus at, aliquid explicabo placeat eligendi, assumenda magni saepe eius
+                consequuntur.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium dicta aliquid, autem, cum, impedit nostrum, rem molestias quisquam ab iure enim totam? Itaque esse ut adipisci officiis nulla repellendus ratione dolore, iste ex
+                doloribus tenetur eos provident quam quasi maxime.</p>
+              <br>
+              <h4>Araç Özellikleri</h4>
+              <ul>
+                <li>Geri Görüş Kamerası</li>
+                <li>Park Sensörü</li>
+                <li>Park Asistanı</li>
+                <li>Bluetooth - Telefon</li>
+                <li>USB / AUX</li>
+                <li>Hız Sabitleyici</li>
+                <li>Çocuk Kilidi</li>
+            </div>
+            <!-- Properties social share -->
+            <div class="aa-properties-social">
+              <ul>
+                <li>Paylaş</li>
+                <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- comment threats -->
+        <div class="col-md-12">
+          <div class="aa-comments-area">
+            <br>
+            <h2>Yorumlar</h2>
+            <br>
+            <div class="comments">
+              <ul class="commentlist">
+                <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <img alt="img" src="img/testimonial-1.png" class="media-object news-img">
+                    </div>
+                    <div class="media-body">
+                      <h4 class="author-name">Adam Barney</h4>
+                      <span class="comments-date"> 20th April, 2016</span>
+                      <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
+                    </div>
+                  </div>
+                </li>
+                <!-- <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <img alt="img" src="img/testimonial-2.png" class="media-object news-img">
+                    </div>
+                    <div class="media-body">
+                      <h4 class="author-name">John Smith</h4>
+                      <span class="comments-date"> 20th April, 2016</span>
+                      <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
+                      <a class="reply-btn" href="#">Reply</a>
+                    </div>
+                  </div>
+                </li> -->
+                <!-- <ul class="children">
+                  <li class="author-comments">
+                    <div class="media">
+                      <div class="media-left">
+                        <img alt="img" src="img/testimonial-3.png" class="media-object news-img">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="author-name">Admin</h4>
+                        <span class="comments-date"> 20th April, 2016</span>
+                        <span class="author-tag">Author</span>
+                        <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
+                        <a class="reply-btn" href="#">Reply</a>
+                      </div>
+                    </div>
+                  </li>
+                  <ul class="children">
+                    <li>
+                      <div class="media">
+                        <div class="media-left">
+                          <img alt="img" src="img/testimonial-1.png" class="media-object news-img">
+                        </div>
+                        <div class="media-body">
+                          <h4 class="author-name">Adam Barney</h4>
+                          <span class="comments-date"> 20th April, 2016</span>
+                          <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
+                          <a class="reply-btn" href="#">Reply</a>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </ul> -->
+                <!-- <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <img alt="img" src="img/testimonial-2.png" class="media-object news-img">
+                    </div>
+                    <div class="media-body">
+                      <h4 class="author-name">Jhon Smith</h4>
+                      <span class="comments-date"> 20th April, 2016</span>
+                      <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
+                      <a class="reply-btn" href="#">Reply</a>
+                    </div>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Respond box -->
+        <div class="col-md-12">
+          <div id="respond">
+            <br>
+            <br>
+            <br>
+            <h2 class="reply-title">Yorum Ekleyin</h2>
+            <br>
+            <br>
+            <form id="commentform">
+              <!-- <p class="comment-notes">
+                Your email address will not be published. Required fields are marked <span class="required">*</span>
+              </p> -->
+              <p class="comment-form-author">
+                <label for="author">İsim <span class="required">*</span></label>
+                <input type="text" required="required" size="30" value="" name="author">
+              </p>
+              <p class="comment-form-email">
+                <label for="email">E-mail <span class="required">*</span></label>
+                <input type="email" required="required" aria-required="true" value="" name="email">
+              </p>
+              <p class="comment-form-comment">
+                <label for="comment">Yorum <span class="required">*</span></label>
+                <textarea required="required" aria-required="true" rows="8" cols="45" name="comment"></textarea>
+              </p>
+              <!-- <p class="form-allowed-tags">
+                You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt;
+                  &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </code>
+              </p> -->
+              <p class="form-submit">
+                <input type="submit" value="Gönder" class="aa-browse-btn" name="submit">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+<!-- / Properties  -->

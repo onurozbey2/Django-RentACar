@@ -1,0 +1,32 @@
+{% extends "homepage.html" %}
+
+{% block title %} {{cardetail.marka}} {{cardetail.model}} - Araç Detayları {% endblock %}
+{% block keywords %} {{cardetail.keywords}} {% endblock %}
+{% block description %} {{cardetail.description}} {% endblock %}
+{% block head %}<link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
+
+{% block menu_section %}
+{% include "menu_section.html" %}
+{% endblock %}
+
+{% block rental_details %}
+<!-- Start Property header  -->
+<section id="aa-property-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-property-header-inner">
+          <h2>ARAÇ DETAYLARI</h2>
+          <ol class="breadcrumb">
+            <li><a href="/">ANA SAYFA</a></li>
+            <li class="active">{{cardetail.marka}} {{cardetail.model}} Araç Detayları</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Property header  -->
+{% include "rental_details.html" %}
+
+{% endblock %}

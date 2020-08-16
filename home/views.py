@@ -1,10 +1,10 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib import messages
-from home.models import Setting, ContactForm, ContactMessageForm
 from django.http import HttpResponseRedirect
 
-from cars.models import Cars
+from home.models import Setting, ContactForm, ContactMessageForm
+from cars.models import Cars, Images
 
 
 def index(request):
@@ -56,3 +56,11 @@ def araclar(request):
     cars = Cars.objects.all()
     context = {'setting': setting, 'cars': cars}
     return render(request, 'araclar.html', context)
+
+
+def arac_detaylar(request, id, slug):
+    setting = Setting.objects.get(pk=1)
+    cardetail = Cars.objects.get(pk=id)
+    images = Images.objects.filter(cars_id=id)
+    context = {'setting': setting, 'cardetail': cardetail, 'images': images}
+    return render(request, 'arac_detaylar.html', context)

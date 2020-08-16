@@ -8,7 +8,7 @@
           <!-- start properties content head -->
           <div class="aa-properties-content-head">
             <div class="aa-properties-content-head-left">
-              <form action="" class="aa-sort-form">
+              <!-- <form action="" class="aa-sort-form">
                 <label for="">Sırala</label>
                 <select name="">
                   <option value="1" selected="Default">Default</option>
@@ -24,7 +24,7 @@
                   <option value="2">12</option>
                   <option value="3">24</option>
                 </select>
-              </form>
+              </form> -->
             </div>
             <div class="aa-properties-content-head-right">
               <a id="aa-grid-properties" href="#"><span class="fa fa-th"></span></a>
@@ -38,7 +38,7 @@
               <li>
                 <article class="aa-properties-item">
                   <a class="aa-properties-item-img" href="#">
-                    <img alt="img" src="{{ rs.resim.url }}">
+                    <img alt="img" src="{{ rs.resim.url }}" style="height: 183px">
                   </a>
                   <div class="aa-tag for-rent">
                     Kiralık
@@ -58,7 +58,7 @@
                       <span class="aa-price">
                         {{ rs.fiyat }}
                       </span>
-                      <a class="aa-secondary-btn" href="#">Detayları Görüntüle</a>
+                      <a class="aa-secondary-btn" href="/arac_detaylar/{{ rs.id }}/{{ rs.slug }}">Detayları Görüntüle</a>
                     </div>
                   </div>
                 </article>

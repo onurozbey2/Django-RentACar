@@ -10,7 +10,8 @@ class CarsImageInLine(admin.TabularInline):
 
 
 class CarsAdmin(admin.ModelAdmin):
-    list_display = ['marka', 'model', 'fiyat', 'model_yılı', 'motor_hacmi', 'yakıt', 'vites', 'image_tag', 'durum']
+    list_display = ['marka', 'model', 'id', 'fiyat', 'model_yılı',
+                    'motor_hacmi', 'yakıt', 'vites', 'image_tag', 'durum']
     list_filter = ['durum', 'yakıt', 'vites', 'kasa_tipi']
     inlines = [CarsImageInLine]
     readonly_fields = ['image_tag']
