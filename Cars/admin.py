@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cars.models import Cars, Images
+from cars.models import Cars, Images, Comment
 
 # Register your models here.
 
@@ -22,5 +22,11 @@ class ImagesAdmin(admin.ModelAdmin):
     readonly_fields = ['image_tag']
 
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['car', 'comment', 'user', 'status']
+    list_filter = ['status']
+
+
 admin.site.register(Cars, CarsAdmin)
 admin.site.register(Images, ImagesAdmin)
+admin.site.register(Comment, CommentAdmin)

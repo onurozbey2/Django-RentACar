@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 
 from home.models import Setting, ContactForm, ContactMessageForm
-from cars.models import Cars, Images
+from cars.models import Cars, Images, Comment
 
 
 def index(request):
@@ -62,5 +62,7 @@ def arac_detaylar(request, id, slug):
     setting = Setting.objects.get(pk=1)
     cardetail = Cars.objects.get(pk=id)
     images = Images.objects.filter(cars_id=id)
-    context = {'setting': setting, 'cardetail': cardetail, 'images': images}
+    comments = Comment.objects.filter(car_id=id, status='True')
+    context = {'setting': setting, 'cardetail': cardetail,
+               'images': images, 'comments': comments}
     return render(request, 'arac_detaylar.html', context)
