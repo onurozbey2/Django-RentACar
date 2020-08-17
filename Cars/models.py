@@ -68,4 +68,4 @@ class Comment(models.Model):
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        fields = ['subject', 'comment']
+        fields = ['name', 'subject', 'comment']

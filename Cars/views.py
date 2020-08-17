@@ -19,6 +19,7 @@ def addcomment(request, id):
             data = Comment()
             data.user_id = current_user.id
             data.car_id = id
+            data.name = form.cleaned_data['name']
             data.subject = form.cleaned_data['subject']
             data.comment = form.cleaned_data['comment']
             data.ip = request.META.get('REMOTE_ADDR')
