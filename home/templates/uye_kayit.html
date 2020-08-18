@@ -1,6 +1,6 @@
 {% extends "homepage.html" %}
 
-{% block title %} {{setting.title}}-Üye Giriş {% endblock %}
+{% block title %} {{setting.title}} - Kayıt Ol {% endblock %}
 {% block keywords %} {{setting.keywords}} {% endblock %}
 {% block description %} {{setting.description}} {% endblock %}
 {% block head %}<link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
@@ -9,6 +9,6 @@
 {% include "menu_section.html" %}
 {% endblock %}
 
-{% block login %}
-{% include "login.html" %}
+{% block register %}
+{% include "register.html" %}
 {% endblock %}

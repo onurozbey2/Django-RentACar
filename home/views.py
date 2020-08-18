@@ -1,7 +1,7 @@
-# from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 
 from home.models import Setting, ContactForm, ContactMessageForm
 from cars.models import Cars, Images, Comment
@@ -66,3 +66,34 @@ def arac_detaylar(request, id, slug):
     context = {'setting': setting, 'cardetail': cardetail,
                'images': images, 'comments': comments}
     return render(request, 'arac_detaylar.html', context)
+
+
+def uye_kayit(request):
+    setting = Setting.objects.get(pk=1)
+    context = {'setting': setting, 'page': 'uye_kayit'}
+    return render(request, 'uye_kayit.html', context)
+
+
+def uye_giris(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return HttpResponseRedirect('/')
+        else:
+            # Return an 'invalid login' error message.
+            messages.warning(
+                request, "Giriş hatası! Bilgilerinizi kontrol edin!")
+            return HttpResponseRedirect('/uye_giris')
+
+    setting = Setting.objects.get(pk=1)
+    context = {'setting': setting, 'page': 'uye_giris'}
+    return render(request, 'uye_giris.html', context)
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')   # Redirect to a success page.

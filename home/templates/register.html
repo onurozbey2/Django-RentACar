@@ -1,0 +1,68 @@
+<!-- Start Proerty header  -->
+<section id="aa-property-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-property-header-inner">
+          <h2>ÜYE KAYIT</h2>
+          <ol class="breadcrumb">
+            <li><a href="/">ANA SAYFA</a></li>
+            <li class="active">Üye Kayıt</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Proerty header  -->
+<section id="aa-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-contact-area">
+          <div class="aa-contact-bottom">
+            <div class="aa-title">
+              <h2>Kayıt Olun</h2>
+              <span></span>
+              <!-- {% if messages %}
+              {% for message in messages %}
+              <div class="alert alert-{{message.tags}}" role="alert">
+                {{ message }}
+              </div>
+              {% endfor %}
+              {% endif %} -->
+            </div>
+            <div class="aa-contact-form">
+              <form class="contactform" action="" method="post">
+                {% csrf_token %}
+                <p class="comment-form-author">
+                  <label for="name">Kullanıcı Adı <span class="required">*</span></label>
+                  <input type="text" name="name" value="" size="82" required="required" placeholder="Kullanıcı adınızı belirleyin">
+                </p>
+                <hr>
+                <p class="comment-form-email">
+                  <label for="email">Email <span class="required">*</span></label>
+                  <input type="email" name="email" value="" size="82" aria-required="true" required="required" placeholder="E-mail adresinizi girin">
+                </p>
+                <hr>
+                <p class="comment-form-author">
+                  <label for="name">Parola <span class="required">*</span></label>
+                  <input type="password" name="password" value="" size="82" required="required" placeholder="Parolanızı belirleyin">
+                </p>
+                <hr>
+                <p class="comment-form-author">
+                  <label for="name">Parola <span class="required">*</span></label>
+                  <input type="password" name="password" value="" size="82" required="required" placeholder="Parolanızı onaylayın">
+                </p>
+                <br>
+                <p class="form-submit">
+                  <input type="submit" name="submit" class="aa-browse-btn" value="Gönder">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
