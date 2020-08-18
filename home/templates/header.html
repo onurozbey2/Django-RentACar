@@ -19,8 +19,12 @@
               </div>
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-right">
-                  <a href="{% static "register.html" %}" class="aa-register">Üye Ol</a>
-                  <a href="{% static "signin.html" %}" class="aa-login">Üye Girişi</a>
+                  {% if user.id is not None %}
+                  <a href="/uye_hesap" class="aa-register">{{user.first_name}} {{user.last_name}}</a>
+                  {% else %}
+                  <a href="/uye_kayit" class="aa-register">Üye Ol</a>
+                  <a href="/uye_giris" class="aa-login">Üye Girişi</a>
+                  {% endif %}
                 </div>
               </div>
             </div>

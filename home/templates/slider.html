@@ -1,29 +1,30 @@
 {% load static %}
 <!-- Start slider  -->
-  <section id="aa-slider">
-    <div class="aa-slider-area">
-      <!-- Top slider -->
-      <div class="aa-top-slider">
-
-        <!-- Top slider single slide -->
-        {% for rs in sliderdata %}
-        <div class="aa-top-slider-single">
-          <img src="{{ rs.resim.url }}" alt="img">
-          <!-- Top slider content -->
-          <div class="aa-top-slider-content">
-            <span class="aa-top-slider-catg">{{ rs.marka }}</span> <!--kasa-->
-            <h2 class="aa-top-slider-title">{{ rs.detay|safe }}</h2> <!--marka&model-->
-            <!-- <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p> -->
-            <span class="aa-top-slider-off">{{ rs.model_yılı }}/{{ rs.model_yılı }}</span>
-            <p class="aa-top-slider-price">{{ rs.fiyat }}</p> <!--fiyat-->
-            <a href="/arac_detaylar/{{ rs.id }}/{{ rs.slug }}" class="aa-top-slider-btn">Detaylara Git <span class="fa fa-angle-double-right"></span></a>
-          </div>
-          <!-- / Top slider content -->
+<section id="aa-slider">
+  <div class="aa-slider-area">
+    <!-- Top slider -->
+    <div class="aa-top-slider">
+      <!-- Top slider single slide -->
+      {% for rs in sliderdata %}
+      <div class="aa-top-slider-single">
+        <img src="{{ rs.resim.url }}" alt="img">
+        <!-- Top slider content -->
+        <div class="aa-top-slider-content">
+          <span class="aa-top-slider-catg">{{ rs.marka }}</span>
+          <!--kasa-->
+          <h2 class="aa-top-slider-title">{{ rs.detay|safe }}</h2>
+          <!--marka&model-->
+          <!-- <p class="aa-top-slider-location"><i class="fa fa-map-marker"></i>South Beach, Miami (USA)</p> -->
+          <span class="aa-top-slider-off">{{ rs.model_yılı }}/{{ rs.model_yılı }}</span>
+          <p class="aa-top-slider-price">{{ rs.fiyat }}</p>
+          <!--fiyat-->
+          <a href="/arac_detaylar/{{ rs.id }}/{{ rs.slug }}" class="aa-top-slider-btn">Detaylara Git <span class="fa fa-angle-double-right"></span></a>
         </div>
-        {% endfor %}
-        <!-- / Top slider single slide -->
-
+        <!-- / Top slider content -->
       </div>
+      {% endfor %}
+      <!-- / Top slider single slide -->
     </div>
-  </section>
-  <!-- End slider  -->
+  </div>
+</section>
+<!-- End slider  -->

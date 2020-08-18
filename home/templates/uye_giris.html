@@ -1,0 +1,14 @@
+{% extends "homepage.html" %}
+
+{% block title %} {{setting.title}} - Üye Giriş {% endblock %}
+{% block keywords %} {{setting.keywords}} {% endblock %}
+{% block description %} {{setting.description}} {% endblock %}
+{% block head %}<link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
+
+{% block menu_section %}
+{% include "menu_section.html" %}
+{% endblock %}
+
+{% block login %}
+{% include "login.html" %}
+{% endblock %}

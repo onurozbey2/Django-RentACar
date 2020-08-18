@@ -1,45 +1,45 @@
 {% load static %}
 <!-- Latest property -->
-  <section id="aa-latest-property">
-    <div class="container">
-      <div class="aa-latest-property-area">
-        <div class="aa-title">
-          <h2>Son İlanlar</h2>
-          <span></span>
-        </div>
-        <div class="aa-latest-properties-content">
-          <div class="row">
-            {% for rs in homelastrentals %}
-            <div class="col-md-4">
-              <article class="aa-properties-item">
-                <a href="#" class="aa-properties-item-img">
-                  <img src="{{ rs.resim.url }}" style="height: 300px" alt="img">
-                </a>
-                <div class="aa-tag for-sale">
-                  Kiralık
+<section id="aa-latest-property">
+  <div class="container">
+    <div class="aa-latest-property-area">
+      <div class="aa-title">
+        <h2>Son İlanlar</h2>
+        <span></span>
+      </div>
+      <div class="aa-latest-properties-content">
+        <div class="row">
+          {% for rs in homelastrentals %}
+          <div class="col-md-4">
+            <article class="aa-properties-item">
+              <a href="#" class="aa-properties-item-img">
+                <img src="{{ rs.resim.url }}" style="height: 300px" alt="img">
+              </a>
+              <div class="aa-tag for-sale">
+                Kiralık
+              </div>
+              <div class="aa-properties-item-content">
+                <div class="aa-properties-info">
+                  <span>{{ rs.model_yılı }}</span>
+                  <span>{{ rs.yakıt }}</span>
+                  <span>{{ rs.vites }}</span>
+                  <span>{{ rs.kasa_tipi }}</span>
                 </div>
-                <div class="aa-properties-item-content">
-                  <div class="aa-properties-info">
-                    <span>{{ rs.model_yılı }}</span>
-                    <span>{{ rs.yakıt }}</span>
-                    <span>{{ rs.vites }}</span>
-                    <span>{{ rs.kasa_tipi }}</span>
-                  </div>
-                  <div class="aa-properties-about">
-                    <h3><a href="#">{{ rs.marka }} {{ rs.model }}</a></h3>
-                    <p>{{ rs.detay|safe }}</p>
-                  </div>
-                  <div class="aa-properties-detial">
-                    <span class="aa-price">
-                      {{ rs.fiyat }}
-                    </span>
-                    <a href="/arac_detaylar/{{ rs.id }}/{{ rs.slug }}" class="aa-secondary-btn">Detayları Görüntüle</a>
-                  </div>
+                <div class="aa-properties-about">
+                  <h3><a href="#">{{ rs.marka }} {{ rs.model }}</a></h3>
+                  <p>{{ rs.detay|safe }}</p>
                 </div>
-              </article>
-            </div>
-            {% endfor %}
-            <!-- <div class="col-md-4">
+                <div class="aa-properties-detial">
+                  <span class="aa-price">
+                    {{ rs.fiyat }}
+                  </span>
+                  <a href="/arac_detaylar/{{ rs.id }}/{{ rs.slug }}" class="aa-secondary-btn">Detayları Görüntüle</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+          <!-- <div class="col-md-4">
               <article class="aa-properties-item">
                 <a href="#" class="aa-properties-item-img">
                   <img src="{% static "img/item/2.jpg" %}" alt="img">
@@ -179,9 +179,9 @@
                 </div>
               </article>
             </div> -->
-          </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- / Latest property -->
+  </div>
+</section>
+<!-- / Latest property -->
