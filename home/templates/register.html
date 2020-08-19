@@ -21,23 +21,42 @@
       <div class="col-md-12">
         <div class="aa-contact-area">
           <div class="aa-contact-bottom">
+
             <div class="aa-title">
               <h2>Kayıt Olun</h2>
               <span></span>
-              <!-- {% if messages %}
+              {% if messages %}
               {% for message in messages %}
               <div class="alert alert-{{message.tags}}" role="alert">
                 {{ message }}
               </div>
               {% endfor %}
-              {% endif %} -->
+              {% endif %}
             </div>
+
             <div class="aa-contact-form">
-              <form class="contactform" action="" method="post">
+              <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <p>
+                  {{ field.label_tag }}<br>
+                  {{ field }}
+                  {% if field.help_text %}
+                  <small style="color: grey">{{ field.help_text }}</small>
+                  {% endif %}
+                  {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+                {% endfor %}
+                </p>
+                {% endfor %}
+                <br>
+                <button type="submit">Kayıt Ol</button>
+              </form>
+              <!-- <form class="contactform" action="" method="post">
                 {% csrf_token %}
                 <p class="comment-form-author">
-                  <label for="name">Kullanıcı Adı <span class="required">*</span></label>
-                  <input type="text" name="name" value="" size="82" required="required" placeholder="Kullanıcı adınızı belirleyin">
+                  <label for="username">Kullanıcı Adı <span class="required">*</span></label>
+                  <input type="text" name="username" value="" size="82" required="required" placeholder="Kullanıcı adınızı belirleyin">
                 </p>
                 <hr>
                 <p class="comment-form-email">
@@ -46,19 +65,19 @@
                 </p>
                 <hr>
                 <p class="comment-form-author">
-                  <label for="name">Parola <span class="required">*</span></label>
+                  <label for="password">Parola <span class="required">*</span></label>
                   <input type="password" name="password" value="" size="82" required="required" placeholder="Parolanızı belirleyin">
                 </p>
                 <hr>
                 <p class="comment-form-author">
-                  <label for="name">Parola <span class="required">*</span></label>
+                  <label for="password">Parola <span class="required">*</span></label>
                   <input type="password" name="password" value="" size="82" required="required" placeholder="Parolanızı onaylayın">
                 </p>
                 <br>
                 <p class="form-submit">
                   <input type="submit" name="submit" class="aa-browse-btn" value="Gönder">
                 </p>
-              </form>
+              </form> -->
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 
+from home.forms import SignUpForm
 from home.models import Setting, ContactForm, ContactMessageForm
 from cars.models import Cars, Images, Comment
 
@@ -69,15 +70,25 @@ def arac_detaylar(request, id, slug):
 
 
 def uye_kayit(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = request.POST['username']
+            password = request.POST['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return HttpResponseRedirect('/')
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting, 'page': 'uye_kayit'}
+    form = SignUpForm()
+    context = {'setting': setting, 'page': 'uye_giris', 'form': form}
     return render(request, 'uye_kayit.html', context)
 
 
 def uye_giris(request):
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password']
+        password = request.POST['password1']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
