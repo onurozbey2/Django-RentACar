@@ -20,7 +20,7 @@
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-right">
                   {% if user.id is not None %}
-                  <a href="/uye_hesap" class="aa-register">{{user.first_name}} {{user.last_name}}</a>
+                  <a href="/user" class="aa-register">{{user.first_name}} {{user.last_name}}</a>
                   <a href="/logout" class="aa-login">Çıkış Yap</a>
                   {% else %}
                   <a href="/uye_kayit" class="aa-register">Kayıt Ol</a>

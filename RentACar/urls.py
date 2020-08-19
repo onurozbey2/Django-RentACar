@@ -24,7 +24,10 @@ urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('cars/', include('cars.urls')),
+    path('user/', include('user.urls')),
     path('admin/', admin.site.urls),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('referanslarimiz/', views.referanslarimiz, name='referanslarimiz'),
     path('iletisim/', views.iletisim, name='iletisim'),
@@ -34,7 +37,6 @@ urlpatterns = [
     path('araclar/', views.araclar, name='araclar'),
     path('arac_detaylar/<int:id>/<slug:slug>/',
          views.arac_detaylar, name='arac_detaylar'),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:

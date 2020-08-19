@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 
 from home.forms import SignUpForm
@@ -88,7 +88,7 @@ def uye_kayit(request):
 def uye_giris(request):
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password1']
+        password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)

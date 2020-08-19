@@ -1,0 +1,56 @@
+{% load static %}
+<!-- Start Properties  -->
+<section id="aa-properties">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="aa-properties-content">
+          <!-- Start properties content body -->
+          <div class="aa-properties-details">
+            <div class="aa-properties-info">
+              <h2>Üye Paneli</h2>
+              <br>
+              <ul>
+                <a href="/user">
+                  <li>Üye Bilgileri</li>
+                </a>
+                <a href="#">
+                  <li>Rezervasyonlar</li>
+                </a>
+                <a href="#">
+                  <li>Yorumlar</li>
+                </a>
+                <a href="/logout">
+                  <li>Çıkış</li>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <aside class="aa-properties-sidebar">
+          <!-- Start Single properties sidebar -->
+          <div class="aa-properties-single-sidebar">
+            <h3>{{profile.user.first_name}} {{profile.user.last_name}}</h3>
+            <div class="media">
+              <div class="media-left">
+                <a>
+                  <img height="200" src="{{ profile.image.url }}" alt="img">
+                </a>
+              </div>
+              <div class="media-body">
+                <br>
+                <span>{{profile.user.email}}</span><br><br>
+                <span>{{profile.phone}}</span><br><br>
+                <span>{{profile.address}}</span><br><br>
+                <span>{{profile.city}}</span><br><br>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
