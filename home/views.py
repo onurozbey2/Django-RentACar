@@ -62,7 +62,7 @@ def araclar(request):
 def arac_detaylar(request, id, slug):
     setting = Setting.objects.get(pk=1)
     cardetail = Cars.objects.get(pk=id)
-    images = Images.objects.get(cars_id=id)
+    images = Images.objects.filter(cars_id=id)
     comments = Comment.objects.filter(car_id=id, status='True')
     context = {'setting': setting, 'cardetail': cardetail,
                'images': images, 'comments': comments}

@@ -9,7 +9,9 @@
           <div class="aa-properties-details">
             <div class="aa-properties-details-img">
               <img src="{{ cardetail.resim.url }}" alt="img">
-              <img src="{{ images.resim.url }}" alt="img">
+              {% for rs in images %}
+              <img src="{{ rs.resim.url }}" alt="img">
+              {% endfor %}
             </div>
             <div class="aa-properties-info">
               <h2>{{cardetail.marka}} {{cardetail.model}}</h2>
