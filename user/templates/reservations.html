@@ -17,7 +17,7 @@
                 <a href="#">
                   <li>Rezervasyonlar</li>
                 </a>
-                <a href="#">
+                <a href="/yorumlar">
                   <li>Yorumlar</li>
                 </a>
                 <a href="/logout">
@@ -30,23 +30,28 @@
       <div class="col-md-9">
         <aside class="aa-properties-sidebar">
           <!-- Start Single properties sidebar -->
+          {% for rs in reservations %}
           <div class="aa-properties-single-sidebar">
-            <h3>{{profile.user.first_name}} {{profile.user.last_name}}</h3>
+            <h3>Araç: {{rs.car.marka}} {{rs.car.model}}</h3>
             <div class="media">
               <div class="media-left">
                 <a>
-                  <img height="200" src="{{ profile.image.url }}" alt="img">
+                  <img height="250" width="250" src="{{ rs.car.resim.url }}" alt="img">
                 </a>
               </div>
               <div class="media-body">
-                <br>
-                <span>{{profile.user.email}}</span><br><br>
-                <span>{{profile.phone}}</span><br><br>
-                <span>{{profile.address}}</span><br><br>
-                <span>{{profile.city}}</span><br><br>
+                <span>İsim: {{ rs.user.first_name }} {{ rs.user.last_name }}</span><br><br>
+                <span>E-mail: {{ rs.email }}</span><br><br>
+                <span>Telefon: {{ rs.phone }}</span><br><br>
+                <span>Adres: {{ rs.address }}</span><br><br>
+                <span>Teslim Alış: {{ rs.checkin }}</span><br><br>
+                <span>Teslim Ediş: {{ rs.checkout }}</span><br><br>
+                <span>Durum: {{ rs.status }}</span><br><br>
               </div>
             </div>
           </div>
+          <span></span>
+          {% endfor %}
         </aside>
       </div>
     </div>

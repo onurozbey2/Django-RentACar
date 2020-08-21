@@ -29,7 +29,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'phone',
-                    'address', 'checkin', 'checkout']
+                    'address', 'checkin', 'checkout', 'status']
     list_filter = ['status']
 
 

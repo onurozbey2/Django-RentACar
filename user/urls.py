@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
     # ex: /polls/
     path('', views.index, name='index'),
-
+    path('rezervasyonlar/', views.rezervasyonlar, name='rezervasyonlar'),
+    path('yorumlar/', views.yorumlar, name='yorumlar')
     # path('addcomment/<int:id>/',
     #      views.addcomment, name='addcomment'),
     # ex: /polls/5/

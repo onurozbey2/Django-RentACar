@@ -1,6 +1,6 @@
 {% extends "homepage.html" %}
 
-{% block title %} {{profile.user.first_name}} {{profile.user.last_name}} - Üye Paneli {% endblock %}
+{% block title %} Rezervasyonlar {% endblock %}
 {% block keywords %} {{setting.keywords}} {% endblock %}
 {% block description %} {{setting.description}} {% endblock %}
 {% block head %}<link rel="shortcut icon" href="{{setting.icon.url}}"> {% endblock %}
@@ -9,7 +9,7 @@
 {% include "menu_section.html" %}
 {% endblock %}
 
-{% block user_profile %}
+{% block reservations %}
 <!-- Start Property header  -->
 <section id="aa-property-header">
   <div class="container">
@@ -27,6 +27,6 @@
   </div>
 </section>
 <!-- End Property header  -->
-{% include "user_profile.html" %}
+{% include "reservations.html" %}
 
 {% endblock %}
