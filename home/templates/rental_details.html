@@ -44,19 +44,17 @@
           </div>
         </div>
         <!-- comment threats -->
-        <div class="col-md-12">
+        <div class="col-md-6">
           <div class="aa-comments-area">
             <br>
             <h2>Yorumlar</h2>
-            <br>
             <div class="comments">
               <ul class="commentlist">
                 {% for rs in comments %}
+                <br>
+                <br>
                 <li>
                   <div class="media">
-                    <!-- <div class="media-left">
-                      <img alt="img" src="img/testimonial-1.png" class="media-object news-img">
-                    </div> -->
                     <div class="media-body">
                       <h4 class="author-name"><b>{{rs.name}}</b></h4>
                       <span class="comments-date"> {{ rs.create_at }}</span>
@@ -69,21 +67,16 @@
               </ul>
             </div>
           </div>
-        </div>
-        <!-- Respond box -->
-        <div class="col-md-12">
           <div id="respond">
-            <br>
-            <br>
-            <br>
             <h2 class="reply-title">Yorum Ekleyin</h2>
             <br>
             <br>
+            {% if user.id is not None %}
             <form id="commentform" method="post" action="/cars/addcomment/{{ cardetail.id }}/">
               {% csrf_token %}
               <p class="comment-form-author">
                 <label for="name">İsim <span class="required">*</span></label>
-                <input type="text" required="required" aria-required="true" size="30" value="" name="name">
+                <input type="text" required="required" aria-required="true" value="" name="name">
               </p>
               <p class="comment-form-email">
                 <label for="subject">Konu </label>
@@ -93,18 +86,71 @@
                 <label for="comment">Yorum <span class="required">*</span></label>
                 <textarea required="required" aria-required="true" rows="8" cols="45" name="comment"></textarea>
               </p>
-              <!-- <p class="form-allowed-tags">
-                You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt;
-                  &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </code>
-              </p> -->
               <p class="form-submit">
-                {% if user.id is not None %}
-                <input type="submit" value="Gönder" class="aa-browse-btn" name="submit">
-                {% else %}
-                Yorum eklemek için <a style="color:cornflowerblue;" href="/uye_giris">giriş</a> yapınız...
-                {% endif %}
+                <input type="submit" value="Yorumu Gönder" class="aa-browse-btn" name="submit">
               </p>
             </form>
+            {% else %}
+            Yorum eklemek için <a style="color:cornflowerblue;" href="/uye_giris">giriş</a> yapınız...
+            {% endif %}
+          </div>
+        </div>
+        <!-- Respond box -->
+        <div class="col-md-6">
+          <div id="respond">
+            <br>
+            <h2>Rezervasyon</h2>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+              {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            <br>
+            <h2 class="reply-title">Rezervasyon Yapın</h2>
+            <br>
+            <br>
+            {% if user.id is not None %}
+            <form id="reservationform" method="post" action="/cars/addreservation/{{ cardetail.id }}/">
+              {% csrf_token %}
+              <p class="comment-form-author">
+                <label for="name">İsim </label>
+                <input type="text" required="required" aria-required="true" value="" name="name">
+              </p>
+              <p class="comment-form-email">
+                <label for="email">E-Mail </label>
+                <input type="text" value="" required="required" aria-required="true" name="email">
+              </p>
+              <p class="comment-form-author">
+                <label for="phone">Telefon </label>
+                <input type="text" value="" required="required" aria-required="true" name="phone">
+              </p>
+              <p class="comment-form-author">
+                <label for="address">Adres </label>
+                <input type="text" value="" required="required" aria-required="true" name="address">
+              </p>
+              <p class="comment-form-author">
+                <label for="fiyat">Günlük Ücret: {{ cardetail.fiyat }}</label>
+              </p>
+              <br>
+              <p class="comment-form-author">
+                <label for="checkin">Teslim Alış Tarihi </label>
+                <input type="date" value="" required="required" aria-required="true" name="checkin">
+              </p>
+              <br>
+              <p class="comment-form-author">
+                <label for="checkout">Teslim Ediş Tarihi </label>
+                <input type="date" value="" required="required" aria-required="true" name="checkout">
+              </p>
+              <br>
+              <p class="form-submit">
+                <input type="submit" value="Rezervasyonu Tamamla" class="aa-browse-btn" name="submit">
+              </p>
+            </form>
+            {% else %}
+            Rezervasyon eklemek için <a style="color:cornflowerblue;" href="/uye_giris">giriş</a> yapınız...
+            {% endif %}
           </div>
         </div>
       </div>
@@ -114,60 +160,3 @@
   </div>
 </section>
 <!-- / Properties  -->
-<!-- <li>
-  <div class="media">
-    <div class="media-left">
-      <img alt="img" src="img/testimonial-2.png" class="media-object news-img">
-    </div>
-    <div class="media-body">
-      <h4 class="author-name">John Smith</h4>
-      <span class="comments-date"> 20th April, 2016</span>
-      <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-      <a class="reply-btn" href="#">Reply</a>
-    </div>
-  </div>
-</li> -->
-<!-- <ul class="children">
-  <li class="author-comments">
-    <div class="media">
-      <div class="media-left">
-        <img alt="img" src="img/testimonial-3.png" class="media-object news-img">
-      </div>
-      <div class="media-body">
-        <h4 class="author-name">Admin</h4>
-        <span class="comments-date"> 20th April, 2016</span>
-        <span class="author-tag">Author</span>
-        <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-        <a class="reply-btn" href="#">Reply</a>
-      </div>
-    </div>
-  </li>
-  <ul class="children">
-    <li>
-      <div class="media">
-        <div class="media-left">
-          <img alt="img" src="img/testimonial-1.png" class="media-object news-img">
-        </div>
-        <div class="media-body">
-          <h4 class="author-name">Adam Barney</h4>
-          <span class="comments-date"> 20th April, 2016</span>
-          <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-          <a class="reply-btn" href="#">Reply</a>
-        </div>
-      </div>
-    </li>
-  </ul>
-</ul> -->
-<!-- <li>
-  <div class="media">
-    <div class="media-left">
-      <img alt="img" src="img/testimonial-2.png" class="media-object news-img">
-    </div>
-    <div class="media-body">
-      <h4 class="author-name">Jhon Smith</h4>
-      <span class="comments-date"> 20th April, 2016</span>
-      <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-      <a class="reply-btn" href="#">Reply</a>
-    </div>
-  </div>
-</li> -->

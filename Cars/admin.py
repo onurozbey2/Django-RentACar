@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cars.models import Cars, Images, Comment
+from cars.models import Cars, Images, Comment, Reservation
 
 # Register your models here.
 
@@ -23,10 +23,17 @@ class ImagesAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['car', 'comment', 'user', 'status']
+    list_display = ['car', 'subject', 'comment', 'user', 'status']
+    list_filter = ['status']
+
+
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'phone',
+                    'address', 'checkin', 'checkout']
     list_filter = ['status']
 
 
 admin.site.register(Cars, CarsAdmin)
 admin.site.register(Images, ImagesAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Reservation, ReservationAdmin)

@@ -69,3 +69,46 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['name', 'subject', 'comment']
+
+
+class Reservation(models.Model):
+    STATUS = (
+        ('New', 'Yeni'),
+        ('Accepted', 'Onaylandı'),
+        ('Cancelled', 'Reddedildi'),
+    )
+    car = models.ForeignKey(Cars, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(blank=True, max_length=25)
+    email = models.CharField(blank=True, max_length=50)
+    phone = models.CharField(blank=True, max_length=20)
+    address = models.CharField(blank=True, max_length=200)
+    days = models.CharField(max_length=20)
+    total = models.CharField(max_length=20)
+    checkin = models.DateField(null=True)
+    checkout = models.DateField(null=True)
+    status = models.CharField(max_length=10, choices=STATUS, default='New')
+    ip = models.CharField(blank=True, max_length=25)
+    note = models.CharField(blank=True, max_length=100)
+
+    def __str__(self):
+        return self.car.marka
+
+    @property
+    def price(self):
+        return self.car.fiyat
+
+    @property
+    def days(self):
+        return self.checkout - self.checkin
+
+    @property
+    def total(self):
+        return self.days * self.cars.fiyat
+
+
+class ReservationForm(ModelForm):
+    class Meta:
+        model = Reservation
+        fields = ['name', 'email', 'phone', 'address',
+                  'checkin', 'checkout']

@@ -150,3 +150,5 @@ CKEDITOR_CONFIGS = {
         'toolbar': None,
     },
 }
+
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
